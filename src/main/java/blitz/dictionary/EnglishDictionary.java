@@ -18,8 +18,7 @@ public class EnglishDictionary {
 
     public EnglishDictionary() throws CsvValidationException, IOException {
         CSVReader in = null;
-        in = new CSVReader(new FileReader("/Users/chanablitz/Documents/TOURO/Spring 2024/"
-                + "Computer Methodology/blitz-dictionary-2024/src/main/resources/englishDictionary.csv"));
+        in = new CSVReader(new FileReader("src/main/resources/englishDictionary.csv"));
         String[] record = null;
 
         while ((record = in.readNext()) != null) {
