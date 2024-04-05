@@ -3,8 +3,7 @@ package blitz.dictionary;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,15 +16,18 @@ public class EnglishDictionary {
     public ArrayList<String[]> words = new ArrayList<>();
 
     public EnglishDictionary() throws CsvValidationException, IOException {
-        CSVReader in = null;
-        in = new CSVReader(new FileReader("src/main/resources/englishDictionary.csv"));
-        String[] record = null;
+        // gets the file from the "resources" directory
+        InputStream in = EnglishDictionary.class.getResourceAsStream(
+                "/englishDictionary.csv");
 
-        while ((record = in.readNext()) != null) {
+        CSVReader reader = new CSVReader(new InputStreamReader(in));
+        String[] record;
+
+        while ((record = reader.readNext()) != null) {
             // record is ONE line of the CSV
             words.add(record);
         }
-        in.close();
+        reader.close();
     }
 
     /**

@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws CsvValidationException, IOException {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             try {
                 new DictionaryFrame().setVisible(true);
