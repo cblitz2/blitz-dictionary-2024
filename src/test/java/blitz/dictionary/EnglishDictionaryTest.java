@@ -18,9 +18,7 @@ class EnglishDictionaryTest {
         List<String> definitions = dictionary.getDefinition("Zany");
 
         // then
-        List<String> expected = Arrays.asList("A merry-andrew"
-                , " a buffoon."
-                , "To mimic.");
+        List<String> expected = Arrays.asList("A merry-andrew", " a buffoon.", "To mimic.");
         assertEquals(expected, definitions);
     }
 
